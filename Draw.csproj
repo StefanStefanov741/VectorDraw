@@ -1,0 +1,144 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <ProjectGuid>{B7A9A968-DE7B-4537-9423-9D8ED1A72BF9}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Draw</RootNamespace>
+    <AssemblyName>Draw</AssemblyName>
+    <ApplicationIcon>src\GUI\Draw.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="src\AssemblyInfo.cs" />
+    <Compile Include="src\GUI\CustomColorPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\CustomColorPopUp.Designer.cs">
+      <DependentUpon>CustomColorPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\CustomSizePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\CustomSizePopup.Designer.cs">
+      <DependentUpon>CustomSizePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\CustomSizePopup_line.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\CustomSizePopup_line.Designer.cs">
+      <DependentUpon>CustomSizePopup_line.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\CustomSizePopup_pentagon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\CustomSizePopup_pentagon.Designer.cs">
+      <DependentUpon>CustomSizePopup_pentagon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\CustomSizePopup_triangle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\CustomSizePopup_triangle.Designer.cs">
+      <DependentUpon>CustomSizePopup_triangle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\DoubleBufferedPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\GUI\DoubleBufferedPanel.Designer.cs">
+      <DependentUpon>DoubleBufferedPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\Program.cs" />
+    <Compile Include="src\Model\GroupShape.cs" />
+    <Compile Include="src\Model\SelectionRectangle.cs" />
+    <Compile Include="src\Model\PentagonShape.cs" />
+    <Compile Include="src\Model\TriangleShape.cs" />
+    <Compile Include="src\Model\PointShape.cs" />
+    <Compile Include="src\Model\LineShape.cs" />
+    <Compile Include="src\Model\EllipseShape.cs" />
+    <Compile Include="src\Model\RectangleShape.cs" />
+    <Compile Include="src\Model\Shape.cs" />
+    <Compile Include="src\Processors\DialogProcessor.cs" />
+    <Compile Include="src\Processors\DisplayProcessor.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\CustomColorPopUp.resx">
+      <DependentUpon>CustomColorPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\CustomSizePopup.resx">
+      <DependentUpon>CustomSizePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\CustomSizePopup_line.resx">
+      <DependentUpon>CustomSizePopup_line.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\CustomSizePopup_pentagon.resx">
+      <DependentUpon>CustomSizePopup_pentagon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\CustomSizePopup_triangle.resx">
+      <DependentUpon>CustomSizePopup_triangle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\DoubleBufferedPanel.resx">
+      <DependentUpon>DoubleBufferedPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="images\colorpicker.png" />
+    <Content Include="images\custom_color.png" />
+    <Content Include="images\deleteShapeBtn.png" />
+    <Content Include="images\ellipsebitmap.png" />
+    <Content Include="images\ellipsebitmap2.png" />
+    <Content Include="images\line.png" />
+    <Content Include="images\pentagon.png" />
+    <Content Include="images\point.png" />
+    <Content Include="images\selectedBlack.png" />
+    <Content Include="images\selectedWhite.png" />
+    <Content Include="images\selection.png" />
+    <Content Include="images\triangle.png" />
+    <None Include="Resources\selectedBlack.bmp" />
+  </ItemGroup>
+</Project>
